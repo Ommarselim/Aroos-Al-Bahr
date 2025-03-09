@@ -1,4 +1,5 @@
-﻿using AroosAlBahr.Infrastructure.Data;
+﻿using AroosAlBahr.Domain.Entities;
+using AroosAlBahr.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AroosAlBahr.Web.Controllers
@@ -18,6 +19,13 @@ namespace AroosAlBahr.Web.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Villa obj)
+        {
+            _db.Villas.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
