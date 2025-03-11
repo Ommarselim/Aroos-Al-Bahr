@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using AroosAlBahr.Infrastructure.Data;
 using AroosAlBahr.Web.ViewModels;
 
-namespace WhiteLagoon.Web.Controllers
+namespace AroosAlBahr.Web.Controllers
 {
 
     public class AmenityController : Controller

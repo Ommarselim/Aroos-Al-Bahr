@@ -1,30 +1,38 @@
-using System.Diagnostics;
+using AroosAlBahr.Application.Common.Interfaces;
+using AroosAlBahr.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using AroosAlBahr.Web.Models;
 
-namespace AroosAlBahr.Web.Controllers;
 
-public class HomeController : Controller
+namespace AroosAlBahr.Web.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly IUnitOfWork _unitOfWork;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public IActionResult Index()
+        {
+            HomeVM homeVM = new()
+            {
+                VillaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity"),
+                Nights = 1,
+                CheckInDate = DateOnly.FromDateTime(DateTime.Now),
+            };
+            return View(homeVM);
+        }
 
-    public IActionResult Error()
-    {
-        return View();
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
