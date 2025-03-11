@@ -21,7 +21,6 @@ namespace AroosAlBahr.Infrastructure.Repository
             _db = db;
         }
 
-
         public void Update(Villa entity)
         {
             _db.Villas.Update(entity);

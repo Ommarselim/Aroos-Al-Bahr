@@ -4,8 +4,9 @@ using AroosAlBahr.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using AroosAlBahr.Infrastructure.Data;
 
-namespace WhiteLagoon.Web.Controllers
+namespace AroosAlBahr.Web.Controllers
 {
 
     public class VillaNumberController : Controller

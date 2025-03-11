@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+﻿using AroosAlBahr.Domain.Entities;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using AroosAlBahr.Domain.Entities;
 
 namespace AroosAlBahr.Web.ViewModels
 {
