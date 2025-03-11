@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace AroosAlBahr.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork

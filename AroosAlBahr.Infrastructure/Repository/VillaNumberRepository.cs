@@ -10,7 +10,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace AroosAlBahr.Infrastructure.Repository
 {
     public class VillaNumberRepository : Repository<VillaNumber>, IVillaNumberRepository

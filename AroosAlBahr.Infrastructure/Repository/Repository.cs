@@ -1,13 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AroosAlBahr.Application.Common.Interfaces;
+using AroosAlBahr.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using AroosAlBahr.Application.Common.Interfaces;
 using AroosAlBahr.Domain.Entities;
-using AroosAlBahr.Infrastructure.Data;
 
 namespace AroosAlBahr.Infrastructure.Repository
 {
