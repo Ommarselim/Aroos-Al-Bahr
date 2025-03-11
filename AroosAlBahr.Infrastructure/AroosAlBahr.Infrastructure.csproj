@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AroosAlBahr.Domain\AroosAlBahr.Domain.csproj" />
+    <ProjectReference Include="..\AroosAlBahr.Application\AroosAlBahr.Application.csproj" />
   </ItemGroup>
 
 </Project>
