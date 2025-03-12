@@ -1,4 +1,5 @@
 using AroosAlBahr.Application.Common.Interfaces;
+using AroosAlBahr.Domain.Entities;
 using AroosAlBahr.Infrastructure.Data;
 using AroosAlBahr.Infrastructure.Repository;
 using Microsoft.AspNetCore.Identity;
@@ -11,8 +12,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(option =>
  option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
