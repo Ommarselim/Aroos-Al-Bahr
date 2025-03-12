@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AroosAlBahr.Infrastructure.Data;
 using AroosAlBahr.Web.ViewModels;
+using AroosAlBahr.Application.Common.Utility;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AroosAlBahr.Web.Controllers
 {
-
+    [Authorize(Roles = SD.Role_Admin)]
     public class AmenityController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

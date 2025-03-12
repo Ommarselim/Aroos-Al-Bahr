@@ -2,9 +2,11 @@
 using AroosAlBahr.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using AroosAlBahr.Infrastructure.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AroosAlBahr.Web.Controllers
 {
+    [Authorize]
     public class VillaController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
