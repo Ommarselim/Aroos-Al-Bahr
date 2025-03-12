@@ -1,0 +1,72 @@
+﻿/* Absolute Center Spinner */
+.loading {
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+    /* Transparent Overlay */
+    .loading:before {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Animated Spinner */
+    .loading:not(:required):after {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top-color: #ff3e00;
+        border-right-color: #ffdd00;
+        border-bottom-color: #13ff00;
+        border-left-color: #0095ff;
+        animation: spinner 1s linear infinite, glow 1.5s ease-in-out infinite;
+    }
+
+/* Spinner Rotation */
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulsating Glow Effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 62, 0, 0.5), 0 0 10px rgba(255, 221, 0, 0.5), 0 0 15px rgba(19, 255, 0, 0.5), 0 0 20px rgba(0, 149, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 10px rgba(255, 62, 0, 0.8), 0 0 20px rgba(255, 221, 0, 0.8), 0 0 30px rgba(19, 255, 0, 0.8), 0 0 40px rgba(0, 149, 255, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 62, 0, 0.5), 0 0 10px rgba(255, 221, 0, 0.5), 0 0 15px rgba(19, 255, 0, 0.5), 0 0 20px rgba(0, 149, 255, 0.5);
+    }
+}
