@@ -2,7 +2,6 @@ using AroosAlBahr.Application.Common.Interfaces;
 using AroosAlBahr.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-
 namespace AroosAlBahr.Web.Controllers
 {
     public class HomeController : Controller
@@ -26,18 +25,8 @@ namespace AroosAlBahr.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(HomeVM homeVM)
+        public IActionResult GetVillasByDate(int nights, DateOnly checkInDate)
         {
-
-            homeVM.VillaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity");
-
-            return View(homeVM);
-        }
-
-        public async Task<IActionResult> GetVillasByDate(int nights, DateOnly checkInDate)
-        {
-            await Task.Delay(3000); // Delay for 3 seconds For Testing spinner
-
             var villaList = _unitOfWork.Villa.GetAll(includeProperties: "VillaAmenity").ToList();
             foreach (var villa in villaList)
             {
@@ -46,7 +35,6 @@ namespace AroosAlBahr.Web.Controllers
                     villa.IsAvailable = false;
                 }
             }
-
             HomeVM homeVM = new()
             {
                 CheckInDate = checkInDate,
@@ -56,7 +44,6 @@ namespace AroosAlBahr.Web.Controllers
 
             return PartialView("_VillaList", homeVM);
         }
-
 
         public IActionResult Privacy()
         {
